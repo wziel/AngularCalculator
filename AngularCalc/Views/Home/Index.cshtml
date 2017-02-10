@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Calculator - Wojciech Zieliński</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="container body-content" ng-app="app" ng-controller="indexCtrl">
+        <div class="jumbotron" id="calculator">
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <input type="text" disabled class="form-control" value="{{text}}" />
+                    </td>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('C')">C</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('7')" ng-disabled="isError">7</a></td>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('8')" ng-disabled="isError">8</a></td>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('9')" ng-disabled="isError">9</a></td>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('/')" ng-disabled="isError">/</a></td>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('sqrt')" ng-disabled="isError">sqrt</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('5')" ng-disabled="isError">5</a></td>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('6')" ng-disabled="isError">6</a></td>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('*')" ng-disabled="isError">*</a></td>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('%')" ng-disabled="isError">%</a></td>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('4')" ng-disabled="isError">4</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('1')" ng-disabled="isError">1</a></td>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('2')" ng-disabled="isError">2</a></td>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('3')" ng-disabled="isError">3</a></td>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('-')" ng-disabled="isError">-</a></td>
+                    <td rowspan="2"><a class="btn btn-default" ng-href="#" ng-click="command('=')" ng-disabled="isError">=</a></td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('0')" ng-disabled="isError">0</a></td>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('.')" ng-disabled="!isDecimalPointEnabled">.</a></td>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('+/-')" ng-disabled="isError">+/-</a></td>
+                    <td><a class="btn btn-default" ng-href="#" ng-click="command('+')" ng-disabled="isError">+</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/angular-ui")
+    @Scripts.Render("~/bundles/app/operations")
+    @Scripts.Render("~/bundles/app/states")
+    @Scripts.Render("~/bundles/app")
+</body>
+</html>
